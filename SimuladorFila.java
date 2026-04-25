@@ -4,6 +4,8 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
+// Classe principal: roda simulação com 1 a 10 atendentes e compara resultados
+// Objetivo é descobrir quantos atendentes são necessários pra cumprir a meta de espera <= 120s
 public class SimuladorFila {
 
     private static final int MAX_ATENDENTES = 10;
@@ -55,6 +57,7 @@ public class SimuladorFila {
         }
     }
 
+    // Executa um cenário completo: cria threads de atendentes e gerador, roda simulação e coleta resultados
     private static ResultadoSimulacao executarCenario(int n) throws InterruptedException {
 
         System.out.println();

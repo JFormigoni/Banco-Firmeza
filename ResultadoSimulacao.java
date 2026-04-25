@@ -1,5 +1,7 @@
 import java.util.List;
 
+// Calcula e armazena métricas de um cenário: throughput, espera média/máxima, lead time
+// Verifica se cumpriu a meta de espera <= 120s
 public class ResultadoSimulacao {
 
     public static final double META_ESPERA = 120.0;
@@ -12,6 +14,7 @@ public class ResultadoSimulacao {
     private double leadTimeMedia;
     private boolean slaCumprido;
 
+    // Calcula todas as métricas a partir da lista de clientes atendidos
     public ResultadoSimulacao(int numAtendentes, List<Cliente> atendidos) {
         this.numAtendentes = numAtendentes;
         this.throughput = atendidos.size();

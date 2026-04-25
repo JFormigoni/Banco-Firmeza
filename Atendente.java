@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 
+// Representa um atendente que roda em thread própria
+// Pega clientes da fila e atende com tempo aleatório entre 30-120s
 public class Atendente implements Runnable {
 
     private static final int SERVICO_MIN = 30;
@@ -24,6 +26,7 @@ public class Atendente implements Runnable {
         this.clientesAtendidos = new ArrayList<>();
     }
 
+    // Loop principal: pega cliente da fila, atende por tempo aleatório e registra
     public void run() {
         while (ativo || !filaClientes.isEmpty()) {
             try {

@@ -1,3 +1,4 @@
+// Representa um cliente com seus tempos de chegada, início e fim de atendimento
 public class Cliente {
 
     private int id;
